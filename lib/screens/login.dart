@@ -32,8 +32,7 @@ class _loginState extends State<login> {
 
     return Scaffold(
       appBar: CustomAppBar(
-        
- leadingOntape: () {},
+        leadingOntape: () {},
         leading: () {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
