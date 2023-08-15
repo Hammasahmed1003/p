@@ -170,6 +170,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:podcastapp/screens/Library_screen.dart';
 import 'package:podcastapp/screens/login.dart';
 import 'package:podcastapp/screens/signup_screen.dart';
 import 'package:podcastapp/screens/splash_screen.dart';
@@ -217,8 +218,8 @@ class _MainPageViewState extends State<MainPageView> {
         children: [
           login(),
           DicoverPage(),
-          splash_screen(),
-          
+          LibraryScreen(),
+          login(),
         ],
       ),
       bottomNavigationBar: ButtonNavigation(

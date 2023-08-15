@@ -16,12 +16,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
     this.leading,
-     this.title,
+    this.title,
     this.trailing,
     this.hideDivider = false,
     this.height = 60,
     this.backgroundColor,
-    this.leadingColor,
+    this.leadingColor, required Null Function() leadingOntape,
   }) : super(key: key);
 
   @override

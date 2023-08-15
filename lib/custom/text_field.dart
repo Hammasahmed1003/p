@@ -144,7 +144,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(
-            color: _isFocused ? Colors.purple : Colors.grey,
+            color: _isFocused ? Colors.purple : Colors.grey.withOpacity(0.3),
           ),
         ),
         focusedBorder: OutlineInputBorder(
@@ -156,7 +156,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(
-            color: Colors.grey,
+            color: Colors.grey.withOpacity(0.1),
           ),
         ),
         hintStyle: TextStyle(

@@ -83,7 +83,7 @@ class _ButtonNavigationState extends State<ButtonNavigation> {
             createTabButton(
               context,
               title: ("Discover"),
-              icon: "assets/svg/discoverIcon.svg",
+              icon: "assets/svg/discoverfill.svg",
               inactiveIcon: "assets/svg/discoverIcon.svg",
               selected: _selectedIndex == 1,
               onTap: () {
@@ -97,7 +97,7 @@ class _ButtonNavigationState extends State<ButtonNavigation> {
             createTabButton(
               context,
               title: ("Library"),
-              icon: "assets/svg/LibraryIcon.svg",
+              icon: "assets/svg/libfill.svg",
               inactiveIcon: "assets/svg/LibraryIcon.svg",
               selected: _selectedIndex == 2,
               onTap: () async {
@@ -117,7 +117,7 @@ class _ButtonNavigationState extends State<ButtonNavigation> {
               builder: (context, value, child) => createTabButton(
                 context,
                 title: ("Profile"),
-                icon: "assets/svg/profileIcon.svg",
+                icon: "assets/svg/fillprofile.svg",
                 inactiveIcon: "assets/svg/profileIcon.svg",
                 selected: _selectedIndex == 3,
                 onTap: () async {

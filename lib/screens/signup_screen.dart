@@ -10,6 +10,7 @@ import 'package:podcastapp/screens/MainPageView.dart';
 import 'package:podcastapp/screens/login.dart';
 
 import '../custom/appBar.dart';
+import '../custom/button.dart';
 
 class signup extends StatefulWidget {
   const signup({super.key});
@@ -46,6 +47,7 @@ class _signupState extends State<signup> {
       ),
       child: Scaffold(
         appBar: CustomAppBar(
+          leadingOntape: () {},
           leading: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
@@ -70,7 +72,6 @@ class _signupState extends State<signup> {
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 32,
-                      fontFamily: "Urbanist",
                       fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(
@@ -137,17 +138,30 @@ class _signupState extends State<signup> {
                 const SizedBox(
                   height: 20,
                 ),
-                button_bar(
+                Button(
                   width: size.width * 0.9,
-                  title: "Sign up",
-                  onTap: () {
+                  height: 60,
+                  onPressed: () {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                           builder: (context) =>
                               MainPageView()), // Replace NextScreen with your actual screen
                     );
                   },
+                  text: "Sign Up",
+                  color: Color(0xff9610FF),
                 ),
+                // button_bar(
+                //   width: size.width * 0.9,
+                //   title: "Sign up",
+                //   onTap: () {
+                //     Navigator.of(context).pushReplacement(
+                //       MaterialPageRoute(
+                //           builder: (context) =>
+                //               MainPageView()), // Replace NextScreen with your actual screen
+                //     );
+                //   },
+                // ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -226,10 +240,14 @@ class _signupState extends State<signup> {
                             color: Color(0xff9E9E9E))),
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushNamed("/signup");
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  login()), // Replace NextScreen with your actual screen
+                        );
                       },
                       child: const Text(
-                        "SignUp",
+                        "SignIn",
                         style: TextStyle(
                             color: Color(0xff9610FF),
                             fontSize: 14,

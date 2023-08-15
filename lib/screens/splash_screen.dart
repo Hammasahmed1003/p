@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:podcastapp/screens/LetYouIn.dart';
+import 'package:podcastapp/screens/On_boarding.dart';
 
 class splash_screen extends StatefulWidget {
   const splash_screen({super.key});
@@ -19,7 +20,7 @@ class _splash_screenState extends State<splash_screen> {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
             builder: (context) =>
-                LetYouIn()), // Replace NextScreen with your actual screen
+                OnboardingScreen()), // Replace NextScreen with your actual screen
       );
     });
   }
@@ -42,7 +43,6 @@ class _splash_screenState extends State<splash_screen> {
             Text(
               "WeTalk",
               style: TextStyle(
-                  fontFamily: 'plusjakarta',
                   fontWeight: FontWeight.w700,
                   color: Colors.black,
                   fontSize: 48),
