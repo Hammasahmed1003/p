@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:podcastapp/custom/button_bar.dart';
 import 'package:podcastapp/custom/contact_option_section.dart';
@@ -22,11 +23,12 @@ class ForgetPassword extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: CustomAppBar(leadingOntape: (){},
+      appBar: Appbar(
+        leadingOntape: () {},
         hideDivider: true,
         title: Text(
           "Forgot Password",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+          style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700),
         ),
         leading: () {
           Navigator.of(context).pushReplacement(
@@ -53,7 +55,7 @@ class ForgetPassword extends StatelessWidget {
               ),
               Text(
                 "Select which contact details should we use to reset your password",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
               ).px(20),
               SizedBox(
                 height: 24,

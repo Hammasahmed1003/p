@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -9,7 +10,7 @@ class SubsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {},
       child: Container(
         child: Row(
@@ -17,9 +18,12 @@ class SubsSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 100, width: 100,
-                // height: Get.height * 1 / 7,
-                // width: Get.width * 1 / 3.5,
+                // height: 100, width: 100,
+                // height: Get.height * 1 / 6.8,
+                // width: Get.width * 0.33,
+                height: Get.height * 0.13,
+                width: Get.width * 0.28,
+
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     image: const DecorationImage(
@@ -28,7 +32,7 @@ class SubsSection extends StatelessWidget {
               ).pOnly(right: 16),
               Container(
                   height: Get.height * 0.10,
-                  width: Get.width * 0.6,
+                  width: Get.width * 0.4,
                   child: Row(
                     children: [
                       Column(
@@ -38,7 +42,7 @@ class SubsSection extends StatelessWidget {
                             Text("Ted Talks Daily",
                                 style: TextStyle(
                                   fontWeight: FontWeight.w700,
-                                  fontSize: 18,
+                                  fontSize: 18.sp,
                                 )
                                 // ).pOnly(bottom: 18),
                                 ),
@@ -49,7 +53,7 @@ class SubsSection extends StatelessWidget {
                               "789 Podcasts",
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   color: Color(0xFF616161)),
                             ),
                           ]),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomPlayBtn extends StatefulWidget {
   final VoidCallback onTap;
@@ -74,7 +75,7 @@ class _CustomPlayBtnState extends State<CustomPlayBtn> {
             Icon(
               widget.icon,
               color: widget.iconColor,
-              size: 18,
+              size: 18.sp,
             ),
             Text(
               widget.txt!,

@@ -8,6 +8,7 @@ import 'package:podcastapp/custom/text_field.dart';
 import 'package:podcastapp/screens/BottomNavigation.dart';
 import 'package:podcastapp/screens/MainPageView.dart';
 import 'package:podcastapp/screens/login.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../custom/appBar.dart';
 import '../custom/button.dart';
@@ -46,7 +47,7 @@ class _signupState extends State<signup> {
         systemNavigationBarColor: Colors.white,
       ),
       child: Scaffold(
-        appBar: CustomAppBar(
+        appBar: Appbar(
           leadingOntape: () {},
           leading: () {
             Navigator.of(context).pushReplacement(
@@ -198,31 +199,40 @@ class _signupState extends State<signup> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      child: Image.asset('assets/images/fblogo.png'),
-                      height: 50,
-                      width: 90,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffEEEEEE),
-                        borderRadius: BorderRadius.circular(15),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        child: Image.asset('assets/images/fblogo.png'),
+                        height: 50,
+                        width: 90,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 245, 243, 243),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                       ),
                     ),
-                    Container(
-                      child: Image.asset('assets/images/googlelogo.png'),
-                      height: 50,
-                      width: 90,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffEEEEEE),
-                        borderRadius: BorderRadius.circular(15),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        child: Image.asset('assets/images/googlelogo.png'),
+                        height: 50,
+                        width: 90,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 245, 243, 243),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                       ),
                     ),
-                    Container(
-                      child: Image.asset('assets/images/applelogo.png'),
-                      height: 50,
-                      width: 90,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffEEEEEE),
-                        borderRadius: BorderRadius.circular(15),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        child: Image.asset('assets/images/applelogo.png'),
+                        height: 50,
+                        width: 90,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 245, 243, 243),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                       ),
                     ),
                   ],
@@ -257,7 +267,7 @@ class _signupState extends State<signup> {
                   ],
                 )
               ],
-            ),
+            ).px(24),
           ),
         ),
       ),

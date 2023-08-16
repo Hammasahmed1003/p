@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:podcastapp/screens/Queue_screen.dart';
 import 'package:podcastapp/screens/history_screen.dart';
@@ -57,7 +58,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
               title: Text(
                 "My Library",
                 style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w700,
                     color: Colors.black),
               )),

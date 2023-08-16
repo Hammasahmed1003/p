@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class Button extends StatelessWidget {
@@ -53,7 +54,9 @@ class Button extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-              fontSize: 15, color: Colors.white, fontWeight: FontWeight.w600),
+              fontSize: 15.sp,
+              color: Colors.white,
+              fontWeight: FontWeight.w600),
         ),
         elevation: 0,
       ),

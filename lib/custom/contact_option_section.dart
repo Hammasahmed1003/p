@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ContactOptionSection extends StatelessWidget {
@@ -27,7 +28,7 @@ class ContactOptionSection extends StatelessWidget {
         height: MediaQuery.of(context).orientation == Orientation.portrait
             ? size.height / 8
             : size.height / 5,
-        width: size.width * 0.9,
+        width: size.width * 0.85,
         decoration: BoxDecoration(
           border: Border.all(
             color: const Color.fromARGB(255, 201, 195, 195),
@@ -49,7 +50,7 @@ class ContactOptionSection extends StatelessWidget {
             label,
             style: TextStyle(
               fontFamily: 'plusjakarta',
-              fontSize: 18,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w300,
             ),
           ),
@@ -58,7 +59,7 @@ class ContactOptionSection extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'plusjakarta',
               color: Colors.black,
-              fontSize: 15,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w600,
             ),
           ),

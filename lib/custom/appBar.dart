@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:podcastapp/custom/springWidget.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class Appbar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? leading;
   final Widget? title;
   final Widget? trailing;
@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? backgroundColor;
   final Color? leadingColor;
 
-  const CustomAppBar({
+  const Appbar({
     Key? key,
     this.leading,
     this.title,
@@ -21,7 +21,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.hideDivider = false,
     this.height = 60,
     this.backgroundColor,
-    this.leadingColor, required Null Function() leadingOntape,
+    this.leadingColor,
+    required Null Function() leadingOntape,
   }) : super(key: key);
 
   @override

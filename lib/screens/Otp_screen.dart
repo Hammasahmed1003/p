@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:podcastapp/custom/otp_box.dart';
 import 'package:podcastapp/screens/forget_password.dart';
 
@@ -15,12 +16,12 @@ class OtpScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: CustomAppBar(
-         leadingOntape: () {},
+      appBar: Appbar(
+        leadingOntape: () {},
         hideDivider: true,
         title: Text(
           "Forgot Password",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+          style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w700),
         ),
         leading: () {
           Navigator.of(context).pushReplacement(
@@ -38,7 +39,8 @@ class OtpScreen extends StatelessWidget {
               children: [
                 Text(
                   "Code has been send to +1234**89",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  style:
+                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
                   height: 60,
@@ -57,7 +59,8 @@ class OtpScreen extends StatelessWidget {
                 ),
                 Text(
                   "Resend Code in 55s",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  style:
+                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
                   height: 260,

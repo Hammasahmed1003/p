@@ -11,3 +11,10 @@
 //   final List<Episodes> episodes;
 
 // }
+
+class DiscoverModel{
+   final String coverImageUrl;
+    final String title;
+
+    DiscoverModel({required this.coverImageUrl, required this.title});
+}

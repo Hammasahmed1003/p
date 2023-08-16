@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:podcastapp/custom/appBar.dart';
 import 'package:podcastapp/screens/Otp_screen.dart';
 import 'package:podcastapp/screens/forget_password.dart';
@@ -29,12 +30,12 @@ class _NewPasswordState extends State<NewPassword> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: CustomAppBar(
-         leadingOntape: () {},
+      appBar: Appbar(
+        leadingOntape: () {},
         hideDivider: true,
         title: Text(
           "Create New Password",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
         ),
         leading: () {
           Navigator.of(context).pushReplacement(
@@ -60,8 +61,8 @@ class _NewPasswordState extends State<NewPassword> {
             ),
             Text(
               "Create Your New Password",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-            ).pOnly(right: 100),
+              style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
+            ).pOnly(right: 80),
             SizedBox(
               height: 20,
             ),
@@ -110,7 +111,8 @@ class _NewPasswordState extends State<NewPassword> {
                 ),
                 Text(
                   "Remember me",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  style:
+                      TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600),
                 ),
 
                 // ),
@@ -133,7 +135,7 @@ class _NewPasswordState extends State<NewPassword> {
               color: Color(0xff9610FF),
             ),
             // button_bar(width: size.width * 0.3, title: "Continue")
-          ]),
+          ]).px(24),
         ),
       ),
     );

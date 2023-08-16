@@ -214,6 +214,7 @@ class _MainPageViewState extends State<MainPageView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        physics: NeverScrollableScrollPhysics(),
         controller: _pageController,
         children: [
           login(),

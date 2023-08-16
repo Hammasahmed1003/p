@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:podcastapp/custom/history_section.dart';
+import 'package:podcastapp/screens/Library_screen.dart';
+import 'package:podcastapp/screens/MainPageView.dart';
 
 import '../custom/customAppBar.dart';
 
@@ -11,9 +13,16 @@ class HistoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-          leadingOntape: () {},
+          leadingOntape: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                  builder: (context) =>
+                      MainPageView()), // Replace NextScreen with your actual screen
+            );
+          },
           // leadingIcon: SvgPicture.asset("assets/svg/libmic.svg"),
-          trailing: SvgPicture.asset("assets/svg/showmore.svg"),
+          trailing: GestureDetector(
+              child: SvgPicture.asset("assets/svg/showmore.svg")),
           hideDivider: true,
           title: Text(
             "History",
@@ -21,6 +30,7 @@ class HistoryScreen extends StatelessWidget {
                 fontSize: 24, fontWeight: FontWeight.w700, color: Colors.black),
           )),
       body: ListView.builder(
+          physics: BouncingScrollPhysics(),
           itemCount: 10,
           itemBuilder: (context, index) {
             return Padding(
