@@ -6,7 +6,7 @@ import 'package:podcastapp/screens/forget_password.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../custom/button.dart';
-import '../custom/button_bar.dart';
+// import '../custom/button_bar.dart';
 import '../custom/text_field.dart';
 
 class NewPassword extends StatefulWidget {

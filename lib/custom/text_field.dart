@@ -137,7 +137,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       decoration: InputDecoration(
         filled: true,
         // fillColor: Color(0xffFAFAFA),
-        fillColor: _isFocused ? Colors.purple.shade50 : Colors.grey[250],
+        fillColor: _isFocused ? Colors.purple.shade50 : Colors.grey[50],
         prefixIcon: _showAlternatePrefixIcon
             ? widget.alternatePrefixIcon
             : widget.defaultPrefixIcon,
@@ -165,7 +165,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         ),
         hintStyle: TextStyle(
-          fontFamily: 'plusjakarta',
           color: _isFocused ? Colors.black : Colors.grey,
           fontSize: 14.sp,
           fontWeight: FontWeight.w600,

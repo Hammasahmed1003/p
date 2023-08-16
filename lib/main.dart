@@ -3,7 +3,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:podcastapp/screens/Library_screen.dart';
+import 'package:podcastapp/screens/Profile_screen.dart';
+import 'package:podcastapp/screens/downloads.dart';
+import 'package:podcastapp/screens/edit_profile.dart';
+import 'package:podcastapp/screens/security.dart';
 import 'package:podcastapp/screens/splash_screen.dart';
+
+import 'screens/Queue_screen.dart';
+import 'screens/content_screen.dart';
+import 'screens/notification.dart';
 // import 'package:zalada_app/service/fcm_token.dart';
 // import 'package:zalada_app/utiles/multi_language.dart';
 // import 'package:zalada_app/utiles/themeData.dart';

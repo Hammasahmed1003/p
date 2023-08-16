@@ -63,7 +63,7 @@ class _DicoverPageState extends State<DicoverPage> {
                 Text(
                   "Popular And Trending Author",
                   style:
-                      TextStyle(fontWeight: FontWeight.w700, fontSize: 17.sp),
+                      TextStyle(fontWeight: FontWeight.w600, fontSize: 15.sp),
                 ),
                 Text(
                   "See All",
@@ -89,7 +89,7 @@ class _DicoverPageState extends State<DicoverPage> {
                 Text(
                   "More Listened Broadcast",
                   style:
-                      TextStyle(fontWeight: FontWeight.w700, fontSize: 16.sp),
+                      TextStyle(fontWeight: FontWeight.w600, fontSize: 14.sp),
                 ),
                 Text(
                   "See All",

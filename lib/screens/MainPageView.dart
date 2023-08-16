@@ -177,6 +177,7 @@ import 'package:podcastapp/screens/splash_screen.dart';
 
 import '../PageView/discrover_screen.dart';
 import 'BottomNavigation.dart';
+import 'Profile_screen.dart';
 
 class MainPageView extends StatefulWidget {
   final int? initialIndex;
@@ -198,9 +199,9 @@ class _MainPageViewState extends State<MainPageView> {
   @override
   void initState() {
     super.initState();
-    // setState(() {
-    //   _currentIndex = widget.initialIndex ?? _currentIndex;
-    // });
+    setState(() {
+      _currentIndex = widget.initialIndex ?? _currentIndex;
+    });
   }
 
   void _onTabChanged(int newIndex) {
@@ -220,7 +221,7 @@ class _MainPageViewState extends State<MainPageView> {
           login(),
           DicoverPage(),
           LibraryScreen(),
-          login(),
+          ProfileScreen(),
         ],
       ),
       bottomNavigationBar: ButtonNavigation(

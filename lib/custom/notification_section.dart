@@ -5,8 +5,10 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class SubsSection extends StatelessWidget {
-  SubsSection({super.key});
+class NotificationSection extends StatelessWidget {
+  NotificationSection({super.key});
+
+  bool select = true;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class SubsSection extends StatelessWidget {
       child: Container(
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 // height: 100, width: 100,
@@ -27,7 +29,7 @@ class SubsSection extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     image: const DecorationImage(
-                        image: AssetImage("assets/images/Tedtalks.png"),
+                        image: AssetImage("assets/images/notimage.png"),
                         fit: BoxFit.cover)),
               ).pOnly(right: 16),
               Container(
@@ -39,18 +41,24 @@ class SubsSection extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Ted Talks Daily",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 18.sp,
-                                )
-                                // ).pOnly(bottom: 18),
-                                ),
+                            SizedBox(
+                              width: 140,
+                              child: Text("The Jordan Show",
+                                  maxLines: 1,
+                                  softWrap: false,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 13.sp,
+                                  )
+                                  // ).pOnly(bottom: 18),
+                                  ),
+                            ),
                             SizedBox(
                               height: 9,
                             ),
                             Text(
-                              "789 Podcasts",
+                              "Crime",
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12.sp,
@@ -59,6 +67,20 @@ class SubsSection extends StatelessWidget {
                           ]),
                     ],
                   )),
+              Transform.scale(
+                scale: 1.3,
+                child: Switch.adaptive(
+                  inactiveTrackColor: Colors.grey[100],
+                  activeTrackColor: Color(0xff9610FF),
+                  activeColor: Colors.white,
+                  value: select,
+                  onChanged: (value) {
+                    // This is called when the user toggles the switch.
+                    select:
+                    true;
+                  },
+                ),
+              )
             ]),
       ),
     );

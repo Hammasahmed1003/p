@@ -7,7 +7,7 @@ import 'package:podcastapp/screens/signup_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../custom/appBar.dart';
-import '../custom/button_bar.dart';
+// import '../custom/button_bar.dart';
 
 class LetYouIn extends StatelessWidget {
   const LetYouIn({super.key});

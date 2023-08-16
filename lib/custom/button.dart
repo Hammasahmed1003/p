@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class Button extends StatelessWidget {
-  Button(
-      {Key? key,
-      @required this.color,
-      required this.text,
-      @required this.onPressed,
-      this.height,
-      required this.width})
-      : super(key: key);
+  Button({
+    Key? key,
+    @required this.color,
+    required this.text,
+    @required this.onPressed,
+    this.height,
+    required this.width,
+  }) : super(key: key);
 
   final Color? color;
   final String text;
@@ -20,6 +20,7 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var widget;
     return Container(
       height: height,
       width: width,

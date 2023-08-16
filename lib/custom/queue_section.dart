@@ -14,7 +14,7 @@ class QueueSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: () {},
       child: Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -43,7 +43,7 @@ class QueueSection extends StatelessWidget {
                           "938: Tom Wright  | Tom Wright ",
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
-                            fontSize: 18.sp,
+                            fontSize: 15.sp,
                           ),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,

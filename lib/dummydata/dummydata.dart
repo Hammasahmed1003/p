@@ -1,7 +1,6 @@
 import 'package:podcastapp/models/podcast_model.dart';
 
 class DummyData {
-
   static List<DiscoverModel> list = [
     DiscoverModel(
         coverImageUrl:
@@ -30,6 +29,6 @@ class DummyData {
     DiscoverModel(
         coverImageUrl:
             "https://media.istockphoto.com/id/1391724346/photo/indian-man-in-white-shirt-with-beard-singing-in-recording-studio-on-blue-background.jpg?s=2048x2048&w=is&k=20&c=ofvAwMZVIeGoFb-TjtqQJztq1K0RPZuWGwAgwQrJ2Rg=",
-        title: "875: Should I Marry My Dying Girlfriend? | Feedback Friday"),
+        title: "875: Tarak Metha ka ulta chachma? | Feedback Friday"),
   ];
 }
