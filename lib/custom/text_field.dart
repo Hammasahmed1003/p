@@ -60,6 +60,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CustomTextField extends StatefulWidget {
@@ -71,6 +72,7 @@ class CustomTextField extends StatefulWidget {
   final TextInputType? keyboardType;
   final bool? obscureText;
   final bool? readOnly;
+  final VoidCallback? ontap;
 
   const CustomTextField({
     Key? key,
@@ -81,6 +83,7 @@ class CustomTextField extends StatefulWidget {
     this.alternateSuffixIcon,
     this.obscureText,
     this.keyboardType,
+    this.ontap,
     this.readOnly,
   }) : super(key: key);
 
@@ -126,13 +129,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
       keyboardType: widget.keyboardType,
       obscureText: widget.obscureText ?? false,
       readOnly: widget.readOnly ?? false,
-      onTap: _onTap,
+      // onTap: _onTap,
+      onTap: widget.ontap,
       onFieldSubmitted: (_) {
         _focusNode.unfocus();
       },
       decoration: InputDecoration(
         filled: true,
-        fillColor: Color(0xffFAFAFA),
+        // fillColor: Color(0xffFAFAFA),
+        fillColor: _isFocused ? Colors.purple.shade50 : Colors.grey[50],
         prefixIcon: _showAlternatePrefixIcon
             ? widget.alternatePrefixIcon
             : widget.defaultPrefixIcon,
@@ -144,7 +149,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(
-            color: _isFocused ? Colors.purple : Colors.grey,
+            color: _isFocused ? Colors.purple : Colors.grey.withOpacity(0.3),
           ),
         ),
         focusedBorder: OutlineInputBorder(
@@ -156,18 +161,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(
-            color: Colors.grey,
+            color: Colors.grey.withOpacity(0.1),
           ),
         ),
         hintStyle: TextStyle(
-          fontFamily: 'plusjakarta',
-          color: _isFocused
-              ? Theme.of(context).hintColor.withOpacity(0.3)
-              : Colors.grey,
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
+          color: _isFocused ? Colors.black : Colors.grey,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w600,
         ),
       ),
-    ).px(20).py(12);
+    ).py(12);
   }
 }

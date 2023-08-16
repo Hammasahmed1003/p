@@ -170,12 +170,14 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:podcastapp/screens/Library_screen.dart';
 import 'package:podcastapp/screens/login.dart';
 import 'package:podcastapp/screens/signup_screen.dart';
 import 'package:podcastapp/screens/splash_screen.dart';
 
 import '../PageView/discrover_screen.dart';
 import 'BottomNavigation.dart';
+import 'Profile_screen.dart';
 
 class MainPageView extends StatefulWidget {
   final int? initialIndex;
@@ -197,9 +199,9 @@ class _MainPageViewState extends State<MainPageView> {
   @override
   void initState() {
     super.initState();
-    // setState(() {
-    //   _currentIndex = widget.initialIndex ?? _currentIndex;
-    // });
+    setState(() {
+      _currentIndex = widget.initialIndex ?? _currentIndex;
+    });
   }
 
   void _onTabChanged(int newIndex) {
@@ -213,12 +215,13 @@ class _MainPageViewState extends State<MainPageView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        physics: NeverScrollableScrollPhysics(),
         controller: _pageController,
         children: [
           login(),
           DicoverPage(),
-          splash_screen(),
-          
+          LibraryScreen(),
+          ProfileScreen(),
         ],
       ),
       bottomNavigationBar: ButtonNavigation(

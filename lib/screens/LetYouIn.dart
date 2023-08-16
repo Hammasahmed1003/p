@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:podcastapp/custom/button.dart';
 import 'package:podcastapp/screens/login.dart';
 import 'package:podcastapp/screens/signup_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../custom/appBar.dart';
-import '../custom/button_bar.dart';
+// import '../custom/button_bar.dart';
 
 class LetYouIn extends StatelessWidget {
   const LetYouIn({super.key});
@@ -15,14 +17,8 @@ class LetYouIn extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: CustomAppBar(
-        leading: () {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-                builder: (context) =>
-                    LetYouIn()), // Replace NextScreen with your actual screen
-          );
-        },
+      appBar: Appbar(
+        leadingOntape: () {},
         hideDivider: true,
       ),
       body: SingleChildScrollView(
@@ -37,12 +33,50 @@ class LetYouIn extends StatelessWidget {
               ),
               Text(
                 "Let's You in",
-                style: TextStyle(fontSize: 48, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 48.sp, fontWeight: FontWeight.w700),
               ),
               SizedBox(
                 height: 40,
               ),
               Center(
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: Color(0xffEEEEEE),
+                        width: 1.0, // Set the border width
+                      ),
+                    ),
+                    height: 60,
+                    width: size.width * 0.9,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/images/fblogo.png',
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          "Continue with Facebook",
+                          style: TextStyle(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              InkWell(
+                onTap: () {},
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -57,16 +91,16 @@ class LetYouIn extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/fblogo.png',
+                        'assets/images/googlelogo.png',
                       ),
                       SizedBox(
                         width: 6,
                       ),
                       Text(
-                        "Continue with Facebook",
+                        "Continue with Google",
                         style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400,
                             color: Colors.black),
                       ),
                     ],
@@ -76,65 +110,36 @@ class LetYouIn extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: Color(0xffEEEEEE),
-                    width: 1.0, // Set the border width
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: Color(0xffEEEEEE),
+                      width: 1.0, // Set the border width
+                    ),
                   ),
-                ),
-                height: 60,
-                width: size.width * 0.9,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/images/googlelogo.png',
-                    ),
-                    SizedBox(
-                      width: 6,
-                    ),
-                    Text(
-                      "Continue with Google",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: Color(0xffEEEEEE),
-                    width: 1.0, // Set the border width
+                  height: 60,
+                  width: size.width * 0.9,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/applelogo.png',
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(
+                        "Continue with Apple",
+                        style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black),
+                      ),
+                    ],
                   ),
-                ),
-                height: 60,
-                width: size.width * 0.9,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/images/applelogo.png',
-                    ),
-                    SizedBox(
-                      width: 6,
-                    ),
-                    Text(
-                      "Continue with Apple",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black),
-                    ),
-                  ],
                 ),
               ),
               SizedBox(
@@ -142,22 +147,26 @@ class LetYouIn extends StatelessWidget {
               ),
               Text(
                 "or ",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+                style:
+                    TextStyle(fontSize: 18.sp, fontWeight: FontWeight.normal),
               ),
               SizedBox(
                 height: 20,
               ),
-              button_bar(
+              Button(
                 width: size.width * 0.9,
-                title: "Sign in with password",
-                onTap: () {
+                height: 60,
+                onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                         builder: (context) =>
                             login()), // Replace NextScreen with your actual screen
                   );
                 },
+                text: "Login",
+                color: Color(0xff9610FF),
               ),
+
               SizedBox(
                 height: 20,
               ),
@@ -166,7 +175,7 @@ class LetYouIn extends StatelessWidget {
                 children: [
                   Text("Dont have an account?",
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
                           color: Color(0xff9E9E9E))),
                   SizedBox(
@@ -184,7 +193,7 @@ class LetYouIn extends StatelessWidget {
                       "SignUp",
                       style: TextStyle(
                           color: Color(0xff9610FF),
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w600),
                     ),
                   )
