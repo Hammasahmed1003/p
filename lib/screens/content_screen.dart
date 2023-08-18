@@ -15,12 +15,7 @@ class ContentScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
           leadingOntape: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                  builder: (context) => MainPageView(
-                        initialIndex: 2,
-                      )), // Replace NextScreen with your actual screen
-            );
+            Navigator.pop(context);
           },
           // trailing: GestureDetector(
           //     onTap: () {}, child: SvgPicture.asset("assets/svg/showmore.svg")),

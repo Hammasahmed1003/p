@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:podcastapp/custom/springWidget.dart';
 // import 'package:podcastapp/custom/button_bar.dart';
 import 'package:podcastapp/custom/text_field.dart';
 import 'package:podcastapp/screens/LetYouIn.dart';
@@ -9,6 +10,7 @@ import 'package:podcastapp/screens/signup_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../custom/appBar.dart';
+import '../custom/btn.dart';
 import '../custom/button.dart';
 import 'BottomNavigation.dart';
 
@@ -45,6 +47,7 @@ class _loginState extends State<login> {
         hideDivider: true,
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.only(top: 1),
           child: Column(
@@ -58,11 +61,11 @@ class _loginState extends State<login> {
                 "Login to Your Account",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 28.sp,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.w700),
               ),
               SizedBox(
-                height: 30,
+                height: 22,
               ),
               CustomTextField(
                 hintText: "Email",
@@ -72,7 +75,7 @@ class _loginState extends State<login> {
                 alternatePrefixIcon: Image.asset(
                   'assets/images/emalcolor.png',
                 ),
-              ),
+              ).px(24),
               CustomTextField(
                 obscureText: true,
                 hintText: "Password",
@@ -88,21 +91,24 @@ class _loginState extends State<login> {
                 alternatePrefixIcon: Image.asset(
                   'assets/images/colorpasswordicon.png',
                 ),
-              ),
+              ).px(24),
               SizedBox(
-                height: 15,
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Checkbox(
-                    side: BorderSide(color: Color(0xff9610FF), width: 3),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
+                  SpringWidget(
+                    onTap: () {},
+                    child: Checkbox(
+                      side: BorderSide(color: Color(0xff9610FF), width: 3),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      checkColor: Colors.purple[500],
+                      value: _isChecked,
+                      onChanged: _toggleCheckbox,
                     ),
-                    checkColor: Colors.purple[500],
-                    value: _isChecked,
-                    onChanged: _toggleCheckbox,
                   ),
                   Text(
                     "Remember me",
@@ -113,26 +119,43 @@ class _loginState extends State<login> {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
-              Button(
-                width: size.width * 0.9,
+              RoundButton(
+                width: size.width * 1.9,
                 height: 60,
-                onPressed: () {
-                  Navigator.of(context).pushReplacement(
+                // disabled: true,
+                // loading: true,
+                // gradient: true,
+                textColor: Colors.white,
+                backgroundColor: Color(0xff9610FF),
+                title: "Login",
+                onTap: () {
+                  Navigator.of(context).push(
                     MaterialPageRoute(
                         builder: (context) =>
                             signup()), // Replace NextScreen with your actual screen
                   );
                 },
-                text: "Login",
-                color: Color(0xff9610FF),
               ),
+              // Button(
+              //   height: 60,
+              //   width: size.width * 1.8,
+              //   onPressed: () {
+              //     Navigator.of(context).pushReplacement(
+              //       MaterialPageRoute(
+              //           builder: (context) =>
+              //               signup()), // Replace NextScreen with your actual screen
+              //     );
+              //   },
+              //   text: "Login",
+              //   color: Color(0xff9610FF),
+              // ),
               // button_bar(width: size.width * 0.9, title: "Sign up"),
               SizedBox(
                 height: 20,
               ),
-              GestureDetector(
+              SpringWidget(
                 onTap: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
@@ -144,7 +167,7 @@ class _loginState extends State<login> {
                   "Forget Password ?",
                   style: TextStyle(
                       color: Color(0xff9610FF),
-                      fontSize: 16.sp,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w600),
                 ),
               ),
@@ -156,7 +179,7 @@ class _loginState extends State<login> {
                 children: [
                   SizedBox(
                     child: Divider(
-                      color: Theme.of(context).hintColor.withOpacity(0.3),
+                      color: Colors.grey[333],
                       thickness: 0.7,
                     ),
                     width: size.width / 5,
@@ -166,12 +189,12 @@ class _loginState extends State<login> {
                     child: Text(
                       'or continue with',
                       style: TextStyle(
-                          color: Theme.of(context).hintColor, fontSize: 20.sp),
+                          color: Colors.grey.withOpacity(0.9), fontSize: 16.sp),
                     ),
                   ),
                   SizedBox(
                     child: Divider(
-                      color: Theme.of(context).hintColor.withOpacity(0.3),
+                      color: Colors.grey[333],
                       thickness: 0.7,
                     ),
                     width: size.width / 5,
@@ -179,12 +202,12 @@ class _loginState extends State<login> {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  InkWell(
+                  SpringWidget(
                     onTap: () {},
                     child: Container(
                       child: Image.asset('assets/images/fblogo.png'),
@@ -196,7 +219,7 @@ class _loginState extends State<login> {
                       ),
                     ),
                   ),
-                  InkWell(
+                  SpringWidget(
                     onTap: () {},
                     child: Container(
                       child: Image.asset('assets/images/googlelogo.png'),
@@ -208,7 +231,7 @@ class _loginState extends State<login> {
                       ),
                     ),
                   ),
-                  InkWell(
+                  SpringWidget(
                     onTap: () {},
                     child: Container(
                       child: Image.asset('assets/images/applelogo.png'),
@@ -236,7 +259,7 @@ class _loginState extends State<login> {
                   SizedBox(
                     width: 6,
                   ),
-                  GestureDetector(
+                  SpringWidget(
                     onTap: () {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
@@ -258,7 +281,7 @@ class _loginState extends State<login> {
                 height: 20,
               )
             ],
-          ).px(24),
+          ),
         ),
       ),
     );

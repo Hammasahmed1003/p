@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:podcastapp/custom/spring_widget.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class NotificationSection extends StatelessWidget {
@@ -12,8 +13,12 @@ class NotificationSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
+    return Material(
+      elevation: 0.4,
+      shape: RoundedRectangleBorder(
+        borderRadius:
+            BorderRadius.circular(16.0), // Adjust the radius as needed
+      ),
       child: Container(
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,

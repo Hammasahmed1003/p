@@ -60,7 +60,7 @@ class _CustomPlayBtnState extends State<CustomPlayBtn> {
         height: widget.height,
         decoration: BoxDecoration(
           // color: widget.bgColor,
-          color: pressed ? widget.bgColor?.withOpacity(0.9) : widget.bgColor,
+          color: pressed ? widget.bgColor?.withOpacity(0.5) : widget.bgColor,
 // borderRadius: BorderRadius.all(Radius.circular(32)),
           borderRadius: BorderRadius.all(
             Radius.circular(widget.radius ?? 0),

@@ -3,13 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:podcastapp/screens/Author.dart';
+import 'package:podcastapp/screens/LetYouIn.dart';
 import 'package:podcastapp/screens/Library_screen.dart';
+import 'package:podcastapp/screens/MainPageView.dart';
 import 'package:podcastapp/screens/Profile_screen.dart';
 import 'package:podcastapp/screens/downloads.dart';
 import 'package:podcastapp/screens/edit_profile.dart';
 import 'package:podcastapp/screens/security.dart';
 import 'package:podcastapp/screens/splash_screen.dart';
 
+import 'screens/Episode.dart';
+import 'screens/Premium_screen.dart';
 import 'screens/Queue_screen.dart';
 import 'screens/content_screen.dart';
 import 'screens/notification.dart';
@@ -39,7 +44,7 @@ class MyApp extends StatelessWidget {
 //             themeMode: ThemeMode.light,
             theme: ThemeData(fontFamily: "poppinsRegular"),
             debugShowCheckedModeBanner: false,
-            home: splash_screen(),
+            home: LetYouIn(),
           );
         });
   }

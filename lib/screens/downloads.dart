@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:podcastapp/custom/notification_section.dart';
+import 'package:podcastapp/custom/springWidget.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../custom/customAppBar.dart';
@@ -17,11 +18,7 @@ class DownloadScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
           leadingOntape: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                  builder: (context) =>
-                      MainPageView()), // Replace NextScreen with your actual screen
-            );
+            Navigator.pop(context);
           },
           // trailing: GestureDetector(
           //     onTap: () {}, child: SvgPicture.asset("assets/svg/showmore.svg")),
@@ -98,34 +95,44 @@ class DownloadScreen extends StatelessWidget {
                 ),
               ],
             ),
-            ListTile(
-              trailing: Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: Colors.black,
-                size: 19,
-              ),
-              subtitle: Text(
-                "After 7 Day",
-                style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
-              ),
-              title: Text(
-                "Remove completed Episodes",
-                style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400),
+            SpringWidget(
+              onTap: () {},
+              child: ListTile(
+                trailing: Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Colors.black,
+                  size: 19,
+                ),
+                subtitle: Text(
+                  "After 7 Day",
+                  style:
+                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
+                ),
+                title: Text(
+                  "Remove completed Episodes",
+                  style:
+                      TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400),
+                ),
               ),
             ),
-            ListTile(
-              trailing: Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: Colors.black,
-                size: 19,
-              ),
-              subtitle: Text(
-                "After 30 Day",
-                style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
-              ),
-              title: Text(
-                "Remove Unfinished Episodes",
-                style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400),
+            SpringWidget(
+              onTap: () {},
+              child: ListTile(
+                trailing: Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Colors.black,
+                  size: 19,
+                ),
+                subtitle: Text(
+                  "After 30 Day",
+                  style:
+                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
+                ),
+                title: Text(
+                  "Remove Unfinished Episodes",
+                  style:
+                      TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400),
+                ),
               ),
             ),
             Padding(

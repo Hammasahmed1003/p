@@ -16,11 +16,7 @@ class NotificationScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
           leadingOntape: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                  builder: (context) =>
-                      MainPageView()), // Replace NextScreen with your actual screen
-            );
+            Navigator.pop(context);
           },
           // leadingIcon: SvgPicture.asset("assets/svg/libmic.svg"),
           // trailing: GestureDetector(
@@ -48,9 +44,12 @@ class NotificationScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             NotificationSection(),
+            SizedBox(
+              height: 5,
+            ),
             NotificationSection(),
             NotificationSection(),
             NotificationSection(),

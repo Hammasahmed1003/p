@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:podcastapp/custom/appBar.dart';
+import 'package:podcastapp/custom/springWidget.dart';
 import 'package:podcastapp/screens/Otp_screen.dart';
 import 'package:podcastapp/screens/forget_password.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../custom/btn.dart';
 import '../custom/button.dart';
 // import '../custom/button_bar.dart';
 import '../custom/text_field.dart';
@@ -46,6 +48,7 @@ class _NewPasswordState extends State<NewPassword> {
         },
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Center(
           child: Column(children: [
             Padding(
@@ -67,6 +70,7 @@ class _NewPasswordState extends State<NewPassword> {
               height: 20,
             ),
             CustomTextField(
+              obscureText: true,
               hintText: "New Password",
               defaultPrefixIcon: Image.asset(
                 'assets/images/emailicon.png',
@@ -80,12 +84,12 @@ class _NewPasswordState extends State<NewPassword> {
               alternateSuffixIcon: Image.asset(
                 'assets/images/eyedisable.png',
               ),
-            ),
+            ).px(24),
             SizedBox(
               height: 5,
             ),
             CustomTextField(
-              obscureText: false,
+              obscureText: true,
               hintText: "New Password",
               defaultPrefixIcon: Image.asset(
                 'assets/images/passwordicon.png',
@@ -96,18 +100,21 @@ class _NewPasswordState extends State<NewPassword> {
               defaultSuffixIcon: Image.asset(
                 'assets/images/eyedisable.png',
               ),
-            ),
+            ).px(24),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Checkbox(
-                  side: BorderSide(color: Color(0xff9610FF), width: 3),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4),
+                SpringWidget(
+                  onTap: () {},
+                  child: Checkbox(
+                    side: BorderSide(color: Color(0xff9610FF), width: 3),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    checkColor: Colors.purple[500],
+                    value: _isChecked,
+                    onChanged: _toggleCheckbox,
                   ),
-                  checkColor: Colors.purple[500],
-                  value: _isChecked,
-                  onChanged: _toggleCheckbox,
                 ),
                 Text(
                   "Remember me",
@@ -121,21 +128,34 @@ class _NewPasswordState extends State<NewPassword> {
             SizedBox(
               height: 26,
             ),
-            Button(
-              width: size.width * 0.3,
-              height: 60,
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          OtpScreen()), // Replace NextScreen with your actual screen
-                );
-              },
-              text: "Continue",
-              color: Color(0xff9610FF),
-            ),
+            RoundButton(
+                width: size.width * 0.3,
+                textColor: Colors.white,
+                backgroundColor: Color(0xff9610FF),
+                height: 60,
+                title: "Continue",
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            OtpScreen()), // Replace NextScreen with your actual screen
+                  );
+                })
+            // Button(
+            //   width: size.width * 0.3,
+            //   height: 60,
+            //   onPressed: () {
+            //     Navigator.of(context).pushReplacement(
+            //       MaterialPageRoute(
+            //           builder: (context) =>
+            //               OtpScreen()), // Replace NextScreen with your actual screen
+            //     );
+            //   },
+            //   text: "Continue",
+            //   color: Color(0xff9610FF),
+            // ),
             // button_bar(width: size.width * 0.3, title: "Continue")
-          ]).px(24),
+          ]),
         ),
       ),
     );

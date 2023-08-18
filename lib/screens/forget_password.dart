@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:podcastapp/custom/btn.dart';
 // import 'package:podcastapp/custom/button_bar.dart';
 import 'package:podcastapp/custom/contact_option_section.dart';
+import 'package:podcastapp/custom/springWidget.dart';
 import 'package:podcastapp/screens/Otp_screen.dart';
 import 'package:podcastapp/screens/login.dart';
 import 'package:podcastapp/screens/new_password_screen.dart';
@@ -28,17 +30,14 @@ class ForgetPassword extends StatelessWidget {
         hideDivider: true,
         title: Text(
           "Forgot Password",
-          style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700),
+          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700),
         ),
         leading: () {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-                builder: (context) =>
-                    login()), // Replace NextScreen with your actual screen
-          );
+          Navigator.pop(context);
         },
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Center(
           child: Column(
             children: [
@@ -51,16 +50,16 @@ class ForgetPassword extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 24,
+                height: 20,
               ),
               Text(
                 "Select which contact details should we use to reset your password",
                 style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
               ).px(20),
               SizedBox(
-                height: 24,
+                height: 20,
               ),
-              Obx(() => GestureDetector(
+              Obx(() => SpringWidget(
                   onTap: () {
                     Select_sms.value = !Select_sms.value;
                     Select_email.value = false;
@@ -71,9 +70,9 @@ class ForgetPassword extends StatelessWidget {
                       hintText: "+111***99",
                       selected: Select_sms.value))),
               SizedBox(
-                height: 24,
+                height: 20,
               ),
-              Obx(() => GestureDetector(
+              Obx(() => SpringWidget(
                   onTap: () {
                     Select_sms.value = false;
                     Select_email.value = !Select_email.value;
@@ -84,21 +83,34 @@ class ForgetPassword extends StatelessWidget {
                       hintText: "and***ley@yourdomain",
                       selected: Select_email.value))),
               SizedBox(
-                height: 26,
+                height: 20,
               ),
-              Button(
-                width: size.width * 0.3,
-                height: 60,
-                onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            NewPassword()), // Replace NextScreen with your actual screen
-                  );
-                },
-                text: "Continue",
-                color: Color(0xff9610FF),
-              ),
+              RoundButton(
+                  width: size.width * 0.3,
+                  textColor: Colors.white,
+                  backgroundColor: Color(0xff9610FF),
+                  height: 60,
+                  title: "Continue",
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              NewPassword()), // Replace NextScreen with your actual screen
+                    );
+                  })
+              // Button(
+              //   width: size.width * 0.3,
+              //   height: 60,
+              //   onPressed: () {
+              //     Navigator.of(context).pushReplacement(
+              //       MaterialPageRoute(
+              //           builder: (context) =>
+              //               NewPassword()), // Replace NextScreen with your actual screen
+              //     );
+              //   },
+              //   text: "Continue",
+              //   color: Color(0xff9610FF),
+              // ),
             ],
           ),
         ),

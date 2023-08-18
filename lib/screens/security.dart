@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:podcastapp/custom/customAppBar.dart';
+import 'package:podcastapp/custom/springWidget.dart';
 import 'package:podcastapp/screens/forget_password.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -17,11 +18,7 @@ class SecurityScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
           leadingOntape: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                  builder: (context) =>
-                      ProfileScreen()), // Replace NextScreen with your actual screen
-            );
+            Navigator.pop(context);
           },
           // trailing: GestureDetector(
           //     onTap: () {}, child: SvgPicture.asset("assets/svg/showmore.svg")),
@@ -34,6 +31,7 @@ class SecurityScreen extends StatelessWidget {
                 color: Colors.black),
           )),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             Row(
@@ -105,23 +103,26 @@ class SecurityScreen extends StatelessWidget {
                 ),
               ],
             ).p(1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Google Authenticator",
-                  style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black),
-                ).px(20),
-                Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  size: 19,
-                  color: Colors.purple,
-                ).px(20).py(20)
-              ],
-            ).p(1),
+            SpringWidget(
+              onTap: () {},
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Google Authenticator",
+                    style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black),
+                  ).px(20),
+                  Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 19,
+                    color: Colors.purple,
+                  ).px(20).py(20)
+                ],
+              ).p(1),
+            ),
             Button(
               // txtColor: Colors.black26,
               color: Color(0xffF5E7FF),

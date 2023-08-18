@@ -170,6 +170,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:podcastapp/screens/Author.dart';
 import 'package:podcastapp/screens/Library_screen.dart';
 import 'package:podcastapp/screens/login.dart';
 import 'package:podcastapp/screens/signup_screen.dart';
@@ -218,13 +219,14 @@ class _MainPageViewState extends State<MainPageView> {
         physics: NeverScrollableScrollPhysics(),
         controller: _pageController,
         children: [
-          login(),
+          AuthorScreen(),
           DicoverPage(),
           LibraryScreen(),
           ProfileScreen(),
         ],
       ),
       bottomNavigationBar: ButtonNavigation(
+      
         tabChanged: _onTabChanged, // Pass the callback function here
         backgroundColor: Colors.white,
       ),

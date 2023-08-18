@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:podcastapp/custom/btn.dart';
 import 'package:podcastapp/custom/otp_box.dart';
 import 'package:podcastapp/screens/forget_password.dart';
 
@@ -65,19 +66,32 @@ class OtpScreen extends StatelessWidget {
                 SizedBox(
                   height: 260,
                 ),
-                Button(
-                  width: size.width * 0.3,
-                  height: 60,
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              MainPageView()), // Replace NextScreen with your actual screen
-                    );
-                  },
-                  text: "verify",
-                  color: Color(0xff9610FF),
-                ),
+                RoundButton(
+                    width: size.width * 0.3,
+                    textColor: Colors.white,
+                    backgroundColor: Color(0xff9610FF),
+                    height: 60,
+                    title: "Verify",
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                MainPageView()), // Replace NextScreen with your actual screen
+                      );
+                    })
+                // Button(
+                //   width: size.width * 0.3,
+                //   height: 60,
+                //   onPressed: () {
+                //     Navigator.of(context).pushReplacement(
+                //       MaterialPageRoute(
+                //           builder: (context) =>
+                //               MainPageView()), // Replace NextScreen with your actual screen
+                //     );
+                //   },
+                //   text: "verify",
+                //   color: Color(0xff9610FF),
+                // ),
                 // button_bar(width: size.width * 0.3, title: "Continue")
               ],
             ),

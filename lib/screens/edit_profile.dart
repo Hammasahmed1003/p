@@ -9,6 +9,7 @@ import 'package:podcastapp/screens/Profile_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 
+import '../custom/btn.dart';
 import '../custom/button.dart';
 
 import '../custom/text_field.dart';
@@ -30,16 +31,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     return Scaffold(
       appBar: CustomAppBar(
           leadingOntape: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                  builder: (context) => MainPageView(
-                        initialIndex: 3,
-                      )), // Replace NextScreen with your actual screen
-            );
+            Navigator.pop(context);
           },
-          // leadingIcon: SvgPicture.asset("assets/svg/libmic.svg"),
-          // trailing: GestureDetector(
-          //     child: SvgPicture.asset("assets/svg/showmore.svg")),
           hideDivider: true,
           title: Text(
             "Edit Profile",
@@ -49,6 +42,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 color: Colors.black),
           )),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             CustomTextField(
@@ -147,19 +141,31 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             SizedBox(
               height: 20,
             ),
-            Button(
+
+            RoundButton(
               width: size.width * 0.3,
               height: 60,
-              onPressed: () {
-                // Navigator.of(context).pushReplacement(
-                //   MaterialPageRoute(
-                //       builder: (context) =>
-                //           MainPageView()), // Replace NextScreen with your actual screen
-                // );
-              },
-              text: "Update",
-              color: Color(0xff9610FF),
-            ).py(30),
+              // disabled: true,
+              // loading: true,
+              // gradient: true,
+              textColor: Colors.white,
+              backgroundColor: Color(0xff9610FF),
+              title: "Update",
+              onTap: () {},
+            ),
+            // Button(
+            //   width: size.width * 0.3,
+            //   height: 60,
+            //   onPressed: () {
+            //     // Navigator.of(context).pushReplacement(
+            //     //   MaterialPageRoute(
+            //     //       builder: (context) =>
+            //     //           MainPageView()), // Replace NextScreen with your actual screen
+            //     // );
+            //   },
+            //   text: "Update",
+            //   color: Color(0xff9610FF),
+            // ).py(30),
           ],
         ).p(20),
       ),

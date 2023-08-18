@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:podcastapp/custom/button.dart';
+import 'package:podcastapp/custom/springWidget.dart';
 import 'package:podcastapp/screens/login.dart';
 import 'package:podcastapp/screens/signup_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../custom/appBar.dart';
+import '../custom/btn.dart';
 // import '../custom/button_bar.dart';
 
 class LetYouIn extends StatelessWidget {
@@ -22,6 +24,7 @@ class LetYouIn extends StatelessWidget {
         hideDivider: true,
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.only(top: 20),
           child: Column(
@@ -32,14 +35,14 @@ class LetYouIn extends StatelessWidget {
                 height: 200,
               ),
               Text(
-                "Let's You in",
-                style: TextStyle(fontSize: 48.sp, fontWeight: FontWeight.w700),
+                "Let's You In",
+                style: TextStyle(fontSize: 33.sp, fontWeight: FontWeight.w700),
               ),
               SizedBox(
-                height: 40,
+                height: 30,
               ),
               Center(
-                child: InkWell(
+                child: SpringWidget(
                   onTap: () {},
                   child: Container(
                     decoration: BoxDecoration(
@@ -73,9 +76,9 @@ class LetYouIn extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 7,
               ),
-              InkWell(
+              SpringWidget(
                 onTap: () {},
                 child: Container(
                   decoration: BoxDecoration(
@@ -108,9 +111,9 @@ class LetYouIn extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 7,
               ),
-              InkWell(
+              SpringWidget(
                 onTap: () {},
                 child: Container(
                   decoration: BoxDecoration(
@@ -143,7 +146,7 @@ class LetYouIn extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 12,
               ),
               Text(
                 "or ",
@@ -151,21 +154,42 @@ class LetYouIn extends StatelessWidget {
                     TextStyle(fontSize: 18.sp, fontWeight: FontWeight.normal),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
-              Button(
-                width: size.width * 0.9,
-                height: 60,
-                onPressed: () {
+
+              RoundButton(
+                // disabled: true,
+                // loading: true,
+                // gradient: true,
+                textColor: Colors.white,
+                backgroundColor: Color(0xff9610FF),
+                title: "Login",
+                onTap: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                         builder: (context) =>
                             login()), // Replace NextScreen with your actual screen
                   );
                 },
-                text: "Login",
-                color: Color(0xff9610FF),
+                height: 60,
+                width: size.width * 1,
               ),
+
+              //
+
+              // Button(
+              //   width: size.width * 0.9,
+              //   height: 60,
+              //   onPressed: () {
+              //     Navigator.of(context).pushReplacement(
+              //       MaterialPageRoute(
+              //           builder: (context) =>
+              //               login()), // Replace NextScreen with your actual screen
+              //     );
+              //   },
+              //   text: "Login",
+              //   color: Color(0xff9610FF),
+              // ),
 
               SizedBox(
                 height: 20,
@@ -181,14 +205,8 @@ class LetYouIn extends StatelessWidget {
                   SizedBox(
                     width: 6,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                signup()), // Replace NextScreen with your actual screen
-                      );
-                    },
+                  SpringWidget(
+                    onTap: () {},
                     child: Text(
                       "SignUp",
                       style: TextStyle(
